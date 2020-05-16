@@ -5,22 +5,22 @@
 
 BST<std::string> makeTree(char* filename)
 {
-    BST<string> tree;
+    BST<std::string> tree;
     char buf[256];
     int i=0;
-    ifstream file(filename);
+    std::ifstream file(filename);
     while(!file.eof())
     {
         int ch=file.get();
-        if(isalpha(ch))
+        if(std::isalpha(ch))
         {
-            buf[i++]=tolower(ch);
+            buf[i++]=std::tolower(ch);
             continue;
         }
         else if(i>0)
         {
             buf[i]=0;
-            string word(buf);
+            std::string word(buf);
             tree.add(word);
         }
         i=0;
